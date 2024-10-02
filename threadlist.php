@@ -40,48 +40,23 @@ while($row = mysqli_fetch_assoc($result)){
 </div>
 <div class="container">
     <h1>Browse Questions</h1>
-    <div class="media">
-  <img class="mr-3" src="https://th.bing.com/th?id=OIP.3IsXMskZyheEWqtE3Dr7JwHaGe&w=267&h=233&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" width='54px' alt="Generic placeholder image">
+    <?php 
+$id = $_GET['catid'];
+$sql = "SELECT * FROM `threads` WHERE thread_cat_id=$id";
+$result = mysqli_query($conn,$sql);
+while($row = mysqli_fetch_assoc($result)){
+  $id = $row['thread_id'];
+  $title = $row['thread_title'];
+  $desc = $row['thread_desc'];
+
+   echo' <div class="media">
+  <img class="mr-3" src="https://th.bing.com/th?id=OIP.3IsXMskZyheEWqtE3Dr7JwHaGe&w=267&h=233&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" width="54px" alt="Generic placeholder image">
   <div class="media-body">
-    <h5 class="mt-0">Unable to install pyAudio in Windows</h5>
-    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-  </div>
-</div>
-    <h1>Browse Questions</h1>
-    <div class="media">
-  <img class="mr-3" src="https://th.bing.com/th?id=OIP.3IsXMskZyheEWqtE3Dr7JwHaGe&w=267&h=233&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" width='54px' alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0">Unable to install pyAudio in Windows</h5>
-    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    
-  </div>
-</div>
-    <h1>Browse Questions</h1>
-    <div class="media">
-  <img class="mr-3" src="https://th.bing.com/th?id=OIP.3IsXMskZyheEWqtE3Dr7JwHaGe&w=267&h=233&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" width='54px' alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0">Unable to install pyAudio in Windows</h5>
-    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    
-  </div>
-</div>
-    <h1>Browse Questions</h1>
-    <div class="media">
-  <img class="mr-3" src="https://th.bing.com/th?id=OIP.3IsXMskZyheEWqtE3Dr7JwHaGe&w=267&h=233&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" width='54px' alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0">Unable to install pyAudio in Windows</h5>
-    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-  </div>
-</div>
-    <h1>Browse Questions</h1>
-    <div class="media">
-  <img class="mr-3" src="https://th.bing.com/th?id=OIP.3IsXMskZyheEWqtE3Dr7JwHaGe&w=267&h=233&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" width='54px' alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0">Unable to install pyAudio in Windows</h5>
-    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-  </div>
-</div>
-</div>  
+    <h5 class="mt-0"><a href=/forum/thread.php">'.$title.'</a></h5>
+    '.$desc.'
+</div>';
+}
+?>
 
 
     <!-- Optional JavaScript -->
